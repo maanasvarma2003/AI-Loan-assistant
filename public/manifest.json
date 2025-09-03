@@ -1,0 +1,41 @@
+{
+  "short_name": "RuralLend",
+  "name": "RuralLend - AI Loan Assistant for Rural India",
+  "description": "AI-powered instant loans with voice assistance for rural and semi-urban communities in India",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "categories": ["finance", "productivity", "utilities"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "serviceworker": {
+    "src": "/sw.js",
+    "scope": "/"
+  },
+  "features": [
+    "offline-support",
+    "voice-assistance",
+    "multi-language",
+    "low-bandwidth-optimized"
+  ]
+}

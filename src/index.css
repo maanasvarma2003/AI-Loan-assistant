@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.bg-primary {
+  @apply bg-white;
+}
+
+.text-primary {
+  @apply text-gray-900;
+}
+
+.text-secondary {
+  @apply text-gray-600;
+}
+
+.border-primary {
+  @apply border-gray-200;
+}
+
+/* Custom CSS for Rural India specific needs */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.btn-large { @apply py-4 px-6 text-lg font-semibold rounded-lg shadow-lg transition-all duration-200; min-height: 56px; min-width: 48px; }
+.btn-primary { @apply bg-blue-600 hover:bg-blue-700 text-white; }
+.btn-secondary { @apply bg-white hover:bg-gray-50 text-gray-900 border border-gray-300; }
+.input-large { @apply py-4 px-4 text-lg border-2 border-gray-300 bg-white text-gray-900 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200; min-height: 56px; }
+
+/* Themed utilities */
+@layer components {
+  .btn-cta { @apply inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all; }
+  .badge { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200; }
+  .card-elevated { @apply bg-white rounded-xl shadow-lg border border-gray-200; }
+  .heading-underline { @apply relative inline-block; }
+  .heading-underline::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 48px; height: 3px; background: linear-gradient(90deg,#3b82f6 0%,#6366f1 100%); border-radius: 9999px; }
+  .section-soft { background: linear-gradient(180deg, rgba(59,130,246,0.06) 0%, rgba(255,255,255,1) 40%); }
+  .glass { backdrop-filter: saturate(150%) blur(10px); background: rgba(255,255,255,0.75); }
+  .hover-lift { transition: transform .2s ease, box-shadow .2s ease; }
+  .hover-lift:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+  .gradient-text { background: linear-gradient(90deg,#3b82f6,#6366f1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .animated-gradient { background-size: 200% 200%; animation: gradientShift 8s ease infinite; }
+  .divider-soft { height: 1px; background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0.08), rgba(0,0,0,0)); }
+  .animate-fade-up { animation: fadeUp .5s ease-out both; }
+}
+
+@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.loading-spinner { @apply animate-spin rounded-full border-4 border-gray-200 border-t-blue-600; width: 40px; height: 40px; }
+.high-contrast { filter: contrast(1.2) brightness(1.1); }
+.offline-indicator { @apply bg-yellow-500 text-yellow-900 py-2 px-4 text-sm text-center; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+.voice-recording { @apply animate-pulse bg-red-500 text-white; }
+.progress-bar { @apply bg-gray-200 rounded-full overflow-hidden; height: 8px; }
+.progress-fill { @apply bg-blue-600 h-full transition-all duration-300 ease-out; }
+.text-hindi { font-family: 'Noto Sans Devanagari', Arial, sans-serif; }
+.text-regional { font-family: 'Noto Sans', Arial, sans-serif; }
+
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .btn-large { @apply py-3 px-4 text-base; min-height: 48px; }
+  .input-large { @apply py-3 px-3 text-base; min-height: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+@media print { .no-print { display: none !important; } }
