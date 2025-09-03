@@ -35,7 +35,6 @@ const HomePage = () => {
   const { state, actions } = useApp();
   const [currentFeature, setCurrentFeature] = useState(0);
 
-  // Feature prioritization matrix data
   const problemsAddressed = [
     {
       problem: 'Limited access to formal credit in rural areas',
@@ -191,7 +190,6 @@ const HomePage = () => {
             </Link>
           </div>
 
-          {/* Trust indicators */}
           <div className="mt-10 flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
             <div className="flex items-center space-x-2">
               <Award className="w-4 h-4 text-green-500" />
@@ -211,7 +209,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Stats Section */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center space-y-2 card-elevated p-4">
               <div className="p-3 bg-blue-100 rounded-full">
@@ -245,7 +242,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Problems Addressed Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 heading-underline">Problems We Solve for Rural India</h2>
@@ -283,7 +279,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Innovative LLM Features */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 heading-underline">AI-Powered Innovation</h2>
@@ -309,7 +304,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Feature Prioritization Matrix */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 heading-underline">Development Roadmap & Prioritization</h2>
@@ -385,7 +379,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Features Showcase */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 heading-underline">Built for Rural India</h2>

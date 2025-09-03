@@ -20,7 +20,6 @@ import { useApp } from '../context/AppContext';
 const Dashboard = () => {
   const { state } = useApp();
 
-  // Mock user data
   const userData = {
     name: state.user?.name || 'Maanas Varma',
     loanStatus: 'Active',

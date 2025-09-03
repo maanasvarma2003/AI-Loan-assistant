@@ -24,11 +24,21 @@ import {
 } from 'react-icons/fi';
 import { useApp } from '../context/AppContext';
 
-// Helper to upload files
 async function uploadFiles(files) {
+  if (process.env.NODE_ENV === 'production' && !process.env.REACT_APP_API_URL) {
+    return {
+      files: Array.from(files).map((f, i) => ({
+        filename: f.name || `doc-${i + 1}.png`,
+        originalName: f.name || `doc-${i + 1}.png`,
+        size: f.size || 0,
+        url: `/mock/${encodeURIComponent(f.name || `doc-${i + 1}.png`)}`
+      }))
+    };
+  }
+  const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:4000';
   const formData = new FormData();
   Array.from(files).forEach(f => formData.append('files', f));
-  const res = await fetch('http://localhost:4000/api/upload', {
+  const res = await fetch(`${baseUrl}/api/upload`, {
     method: 'POST',
     body: formData
   });
@@ -36,9 +46,12 @@ async function uploadFiles(files) {
   return await res.json();
 }
 
-// Submit application helper
 async function submitApplication(app) {
-  const res = await fetch('http://localhost:4000/api/applications', {
+  if (process.env.NODE_ENV === 'production' && !process.env.REACT_APP_API_URL) {
+    return { ok: true, id: `APP-${Date.now()}` };
+  }
+  const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+  const res = await fetch(`${baseUrl}/api/applications`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(app)
@@ -47,7 +60,6 @@ async function submitApplication(app) {
   return await res.json();
 }
 
-// Input field with icon component
 const InputWithIcon = ({ icon: Icon, label, error, ...props }) => (
   <div>
     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -71,7 +83,6 @@ const InputWithIcon = ({ icon: Icon, label, error, ...props }) => (
   </div>
 );
 
-// Select field with icon component
 const SelectWithIcon = ({ icon: Icon, label, error, children, ...props }) => (
   <div>
     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -97,7 +108,6 @@ const SelectWithIcon = ({ icon: Icon, label, error, children, ...props }) => (
   </div>
 );
 
-// Textarea field with icon component
 const TextareaWithIcon = ({ icon: Icon, label, error, ...props }) => (
   <div>
     <label className="block text-sm font-medium text-gray-700 mb-2">

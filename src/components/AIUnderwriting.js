@@ -57,7 +57,6 @@ const AIUnderwriting = () => {
 
   const [steps, setSteps] = useState(analysisSteps);
 
-  // Technical Architecture Data
   const architectureComponents = [
     {
       layer: 'Frontend Layer',
@@ -101,7 +100,6 @@ const AIUnderwriting = () => {
     }
   ];
 
-  // Simulate AI processing
   useEffect(() => {
     const processAnalysis = async () => {
       for (let i = 0; i < steps.length; i++) {
@@ -116,7 +114,6 @@ const AIUnderwriting = () => {
         setAnalysisStep(i);
       }
 
-      // Generate final results
       const results = {
         decision: 'APPROVED',
         confidence: 92,

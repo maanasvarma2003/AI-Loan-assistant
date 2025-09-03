@@ -115,7 +115,6 @@ const Header = ({ language, setLanguage }) => {
           </div>
         </div>
       </div>
-
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white">
           <nav className="px-4 py-2 space-y-1">
