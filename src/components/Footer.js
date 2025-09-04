@@ -46,12 +46,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between">
-          <p>© {new Date().getFullYear()} RuralLend. All rights reserved.</p>
-          <div className="space-x-4 mt-2 sm:mt-0">
-            <a href="#" className="hover:text-blue-600">Privacy</a>
-            <a href="#" className="hover:text-blue-600">Terms</a>
-            <a href="#" className="hover:text-blue-600">Cookies</a>
+        <div className="mt-8 pt-6 border-t border-gray-200 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-center sm:text-left">© {new Date().getFullYear()} RuralLend. All rights reserved.</p>
+          <div className="flex items-center space-x-4">
+            <a href="#" className="hover:text-blue-600 transition-colors">Privacy</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Terms</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Cookies</a>
           </div>
         </div>
       </div>

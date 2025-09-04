@@ -171,7 +171,6 @@ const HomePage = () => {
     <div className="min-h-screen">
       <section className="section-soft pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="badge mb-4">Made for Rural India</span>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 heading-underline">
             AI-Powered Loans for
             <span className="block text-blue-600">Rural India</span>
